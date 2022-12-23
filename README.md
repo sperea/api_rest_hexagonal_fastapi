@@ -1,5 +1,7 @@
 ## API FastAPI framework + Hexagonal Architecture
 
+[ work in progress ]
+
 I am currently developing a structure for an API in Python 3.11 using FastAPI and following the Hexagonal Architecture principles.
 
 The Hexagonal Architecture is a software design pattern that promotes the separation of concerns between different components of an application. It aims to improve the flexibility and maintainability of the code by decoupling the core business logic from external dependencies such as databases, APIs, or user interfaces.
