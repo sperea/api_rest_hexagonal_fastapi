@@ -1,4 +1,4 @@
-## API FastAPI framework + Hexagonal Architecture
+## Structure for a Generic API REST with FastAPI, Python 3.11 and hex architecture
 
 [ work in progress ]
 
