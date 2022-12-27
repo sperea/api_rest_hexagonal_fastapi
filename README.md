@@ -1,13 +1,57 @@
-## Structure for a Generic API REST with FastAPI, Python 3.11 and hex architecture
+# Aplicación CRUD de usuarios
 
-[ work in progress ]
+Esta aplicación es una implementación de un sistema CRUD (Create, Read, Update, Delete) de usuarios utilizando FastAPI, DDD y la arquitectura hexagonal.
 
-I am currently developing a structure for an API in Python 3.11 using FastAPI and following the Hexagonal Architecture principles.
+## Requisitos
 
-The Hexagonal Architecture is a software design pattern that promotes the separation of concerns between different components of an application. It aims to improve the flexibility and maintainability of the code by decoupling the core business logic from external dependencies such as databases, APIs, or user interfaces.
+- Python 3.8 o superior
+- PostgreSQL
 
-In this project, I am using FastAPI as the web framework to build the API. FastAPI is a modern, fast, and efficient framework that allows me to define the API endpoints and request/response models using the Pydantic library.
+## Instalación
 
-I am also using the Injector library to implement dependency injection in the application, which allows me to decouple the core business logic from external dependencies such as database access or external APIs.
+1. Clona este repositorio
+```bash
+git clone https://github.com/tu_usuario/crud-users.git
+```
 
-I hope you find this project useful and if you have any questions or feedback, don't hesitate to reach out!
+2. Crea un entorno virtual y activa
+```bash
+python3 -m venv env
+source env/bin/activate
+```
+
+3. Instala las dependencias
+```bash
+pip install -r requirements.txt
+```
+
+4. Crea un archivo .env con las siguientes variables de entorno:
+
+* DATABASE_URI: la URI de conexión a la base de datos
+* SECRET_KEY: una clave secreta para la aplicación
+
+5. Crea la base de datos
+
+```bash
+python main.py create_db
+```
+
+## Ejecución
+Para ejecutar la aplicación, ejecuta el siguiente comando
+
+```bash
+uvicorn main:app --reload
+```
+
+## Uso
+La aplicación tiene las siguientes rutas:
+
+* POST /users/: crea un nuevo usuario
+* GET /users/{user_id}: obtiene un usuario por ID
+* PUT /users/{user_id}: actualiza un usuario por ID
+* DELETE /users/{user_id}: elimina un usuario por ID
+
+## Licencia
+Este proyecto está bajo la licencia MIT. Ver el archivo LICENSE para más detalles.
+
+Espero que esto te sea de ayuda. Si tienes alguna pregunta o necesitas más ayuda, no dudes en preguntar.
