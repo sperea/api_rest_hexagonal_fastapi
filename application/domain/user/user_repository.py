@@ -8,4 +8,4 @@ class UserRepository(ABC):
 
     @abstractmethod
     def find_by_username(self, id: str) -> Optional[User]:
-        raise NotImplementedError
+        raise NotImplementedErrorBook
