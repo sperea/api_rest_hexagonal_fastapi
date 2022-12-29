@@ -5,11 +5,9 @@ import re
 class UserCreateModel(BaseModel):
     """UserCreateModel represents a write model to create a user."""
 
-    isbn: str = Field(example="978-0321125217")
-    title: str = Field(
-        example="Domain-Driven Design: Tackling Complexity in the Heart of Softwares"
-    )
-    page: int = Field(ge=0, example=320)
+    username: str = Field(example="testusername")
+    password: str = Field(example="testusername")
+    email: str = Field(example="testusername@domain.com")
 
 
 class UserUpdateModel(BaseModel):
