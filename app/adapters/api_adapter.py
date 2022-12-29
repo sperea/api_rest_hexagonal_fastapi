@@ -1,10 +1,10 @@
 from sqlalchemy import create_engine
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
-from .domain import User, UserRepository
+from app.domain.models.user import User, UserRepository
 
 # Crea la conexión a la base de datos
-DATABASE_URI = "postgresql://user:password@localhost/database"
+DATABASE_URI = "postgresql://api:api@localhost/api"
 engine = create_engine(DATABASE_URI)
 Base = declarative_base()
 Base.metadata.create_all(engine)

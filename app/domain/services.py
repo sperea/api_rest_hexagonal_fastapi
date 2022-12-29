@@ -1,4 +1,4 @@
-from .domain import User, UserRepository
+from app.domain.models.user import User, UserRepository
 
 class UserService:
     def __init__(self, repository: UserRepository):
