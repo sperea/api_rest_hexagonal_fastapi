@@ -1,7 +1,7 @@
 from typing import List
 
-from app.domain.user import User
-from app.domain.user import UserRepository
+from application.domain.user import User
+from application.domain.user import UserRepository
 
 
 class InMemoryUserRepository(UserRepository):
