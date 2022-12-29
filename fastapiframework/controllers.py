@@ -9,14 +9,35 @@ app = FastAPI()
 vote_repository = InMemoryUserRepository()
 
 
-@app.post("/user", response_model=User)
-def user() -> User:
-    return Vote().save(vote_repository)
+@app.get(
+    "/users",
+    response_model=List[UserReadModel],
+    status_code=status.HTTP_200_OK,
+    responses={
+        status.HTTP_404_NOT_FOUND: {
+            "model": ErrorMessageUsersNotFound,
+        },
+    },
+)
+async def get_users(
+    user_query_usecase: UserQueryUseCase = Depends(user_query_usecase),
+):
+    try:
+        users = user_query_usecase.fetch_users()
 
+    except Exception as e:
+        logger.error(e)
+        raise HTTPException(
+            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+        )
 
-@app.get("/users", response_model=int)
-def votes() -> int:
-    return vote_repository.total()
+    if len(users) == 0:
+        raise HTTPException(
+            status_code=status.HTTP_404_NOT_FOUND,
+            detail=UsersNotFoundError.message,
+        )
+
+    return users
 
 
 router = app.router
