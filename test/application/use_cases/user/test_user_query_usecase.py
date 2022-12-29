@@ -14,7 +14,12 @@ def test_fetch_user_by_id():
 
     user_query_use_case = UserQueryUseCaseImpl(user_query_service)
 
-    # Fetch the user by id
+    # Fetch the user by idclass UserCreateModel(BaseModel):
+    """UserCreateModel represents a write model to create a user."""
+
+    username: str = Field(example="testusername")
+    password: str = Field(example="testusername")
+    email: str = Field(example="testusername@domain.com")
     user = user_query_use_case.fetch_user_by_id("123")
     assert isinstance(user, UserReadModel)
     assert user.id == "123"

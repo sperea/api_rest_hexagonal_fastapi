@@ -9,17 +9,18 @@ from application.domain.user import (
     UserRepository,
     UsersNotFoundError,
 )
-from application.infrastructure.sqlite.user import (
+from application.infrastructure.postgresql.user import (
     UserCommandUseCaseUnitOfWorkImpl,
     UserQueryServiceImpl,
     UserRepositoryImpl,
 )
-from application.infrastructure.sqlite.database import SessionLocal, create_tables
+from application.infrastructure.postgresql.database import SessionLocal, create_tables
+
 from application.presentation.schema.user.user_error_message import (
-    ErrorMessageUserIsbnAlreadyExists,
     ErrorMessageUserNotFound,
     ErrorMessageUsersNotFound,
 )
+
 from application.usecase.user import (
     UserCommandUseCase,
     UserCommandUseCaseImpl,
