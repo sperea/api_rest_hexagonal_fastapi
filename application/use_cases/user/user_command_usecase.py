@@ -1,27 +1,4 @@
-from abc import ABC, abstractmethod
-from typing import Optional, cast
 
-import shortuuid
-
-from application.domain.user import (
-    User,
-    UserIsbnAlreadyExistsError,
-    UserNotFoundError,
-    UserRepository
-)
-
-from .user_command_model import UserCreateModel, UserUpdateModel
-from .user_query_model import UserReadModel
-
-
-class UserCommandUseCaseUnitOfWork(ABC):
-    """UserCommandUseCaseUnitOfWork defines an interface based on Unit of Work pattern."""
-
-    user_repository: UserRepository
-
-    @abstractmethod
-    def begin(self):
-        raise NotImplementedError
 from abc import ABC, abstractmethod
 from typing import Optional, cast
 
