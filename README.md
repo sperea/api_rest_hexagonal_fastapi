@@ -11,7 +11,7 @@ Esta aplicación es una implementación de un sistema CRUD (Create, Read, Update
 
 1. Clona este repositorio
 ```bash
-git clone https://github.com/tu_usuario/crud-users.git
+git clone https://github.com/sperea/api_rest_hexagonal_fastapi.git
 ```
 
 2. Crea un entorno virtual y activa
