@@ -4,7 +4,7 @@ Esta aplicación es una implementación de un sistema CRUD (Create, Read, Update
 
 ## Requisitos
 
-- Python 311.1 o superior
+- Python 3.11.1 o superior
 - PostgreSQL
 
 ## Instalación
